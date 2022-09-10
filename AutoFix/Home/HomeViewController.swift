@@ -16,6 +16,23 @@ class HomeViewController: UIViewController {
     // Views
     
     let tableView = UITableView()
+
+    let collectionView: UICollectionView = {
+        
+        let _flowLayout = UICollectionViewFlowLayout()
+
+        // edit properties here
+        _flowLayout.itemSize = CGSize(width: 70, height: 110)
+        _flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        _flowLayout.scrollDirection = UICollectionView.ScrollDirection.horizontal
+        _flowLayout.minimumInteritemSpacing = 0.0
+        
+        let collectionView = UICollectionView.init(frame: .zero, collectionViewLayout: _flowLayout)
+        collectionView.register(MakeCell.self, forCellWithReuseIdentifier: MakeCell.reuseIdentifier)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        return collectionView
+    }()
+    
     let activityIndicator: UIActivityIndicatorView = {
         let spinner = UIActivityIndicatorView(style: .medium)
         spinner.hidesWhenStopped = true
@@ -57,8 +74,10 @@ class HomeViewController: UIViewController {
                 guard !items.isEmpty else {return}
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                    self.collectionView.reloadData()
                 }
             }).disposed(by: disposeBag)
+        
         
         viewModel
             .error

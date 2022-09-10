@@ -34,6 +34,8 @@
 		C8F34DE628CCD159009DAC1E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F34DE528CCD159009DAC1E /* UIViewController+Extension.swift */; };
 		C8F34DE828CCDAAF009DAC1E /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F34DE728CCDAAF009DAC1E /* AppRouter.swift */; };
 		C8F34DEA28CCDC28009DAC1E /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F34DE928CCDC28009DAC1E /* MainTabBar.swift */; };
+		C8F34DEC28CD2935009DAC1E /* Make.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F34DEB28CD2935009DAC1E /* Make.swift */; };
+		C8F34DEE28CD2A4F009DAC1E /* MakeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F34DED28CD2A4F009DAC1E /* MakeCell.swift */; };
 		DF81115D92683E1EEA60AA65 /* Pods_AutoFixTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22865BFA24732F2F2CA1364B /* Pods_AutoFixTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +92,8 @@
 		C8F34DE528CCD159009DAC1E /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		C8F34DE728CCDAAF009DAC1E /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		C8F34DE928CCDC28009DAC1E /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
+		C8F34DEB28CD2935009DAC1E /* Make.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Make.swift; sourceTree = "<group>"; };
+		C8F34DED28CD2A4F009DAC1E /* MakeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCell.swift; sourceTree = "<group>"; };
 		F9A033F1D12D5BA57A84D191 /* Pods-AutoFixTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoFixTests.debug.xcconfig"; path = "Target Support Files/Pods-AutoFixTests/Pods-AutoFixTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -218,6 +222,7 @@
 				C8F34DD128CC8B6B009DAC1E /* ViewModels */,
 				C8F34DC628CBA1F6009DAC1E /* ListingCell.swift */,
 				C8F34DD828CCC8A3009DAC1E /* HomeViewController.swift */,
+				C8F34DED28CD2A4F009DAC1E /* MakeCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				C8F34DC928CC70FB009DAC1E /* Listing.swift */,
+				C8F34DEB28CD2935009DAC1E /* Make.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -507,6 +513,7 @@
 				C8F34D8F28CB90D4009DAC1E /* AppDelegate.swift in Sources */,
 				C8F34DDF28CCCA7F009DAC1E /* ReuseIdentifying.swift in Sources */,
 				C8F34DEA28CCDC28009DAC1E /* MainTabBar.swift in Sources */,
+				C8F34DEC28CD2935009DAC1E /* Make.swift in Sources */,
 				C8F34DD728CCC076009DAC1E /* UIImageView+Extesnsion.swift in Sources */,
 				C8F34D9128CB90D4009DAC1E /* SceneDelegate.swift in Sources */,
 				C8F34DC028CB985A009DAC1E /* URLResponse.swift in Sources */,
@@ -516,6 +523,7 @@
 				C8F34DCD28CC7529009DAC1E /* UIButton+Extension.swift in Sources */,
 				C8F34DC428CB9B49009DAC1E /* APIRequest.swift in Sources */,
 				C8F34DC228CB988D009DAC1E /* APIClient.swift in Sources */,
+				C8F34DEE28CD2A4F009DAC1E /* MakeCell.swift in Sources */,
 				C8F34DD928CCC8A3009DAC1E /* HomeViewController.swift in Sources */,
 				C8F34DD328CC8B8C009DAC1E /* ListingCellViewModel.swift in Sources */,
 			);

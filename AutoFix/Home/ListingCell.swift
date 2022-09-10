@@ -95,6 +95,11 @@ class ListingCell: UITableViewCell {
         super.init(coder: coder)
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        viewModel.accept(nil)
+    }
+    
     func setUpWith(viewModel: ListingCellViewModel) {
         self.viewModel.accept(viewModel)
     }
@@ -144,7 +149,7 @@ extension ListingCell {
         
         // ImageView Constraint
         
-        carImageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        carImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
         carImageView.heightAnchor.constraint(equalToConstant: 120).isActive = true
         carImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20).isActive = true
         carImageView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -20).isActive = true

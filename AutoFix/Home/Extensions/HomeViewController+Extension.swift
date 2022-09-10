@@ -16,6 +16,7 @@ extension HomeViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.dataSource = self
         tableView.delegate = self
+        collectionView.dataSource = self
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.register(ListingCell.self, forCellReuseIdentifier: ListingCell.reuseIdentifier)
         
@@ -40,12 +41,21 @@ extension HomeViewController: UITableViewDataSource {
         cell.setUpWith(viewModel: viewModel.item(for: indexPath.row))
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return collectionView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 120
+    }
 }
 
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+    
     
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        guard let viewModel = viewModel else {return}
@@ -56,4 +66,21 @@ extension HomeViewController: UITableViewDelegate {
 //            AppRouter.shared.presentImageDetailViewController(for: datum, imageURL: url)
 //        }
 //    }
+}
+
+
+extension HomeViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel?.numberOFMakes() ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView
+                .dequeueReusableCell(withReuseIdentifier: MakeCell.reuseIdentifier,
+                                     for: indexPath) as? MakeCell, let make = viewModel?.make(at: indexPath.row) else {
+            return UICollectionViewCell()
+        }
+        cell.bind(item: make)
+        return cell
+    }
 }

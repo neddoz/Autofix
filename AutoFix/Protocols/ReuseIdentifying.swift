@@ -18,3 +18,4 @@ extension ReuseIdentifying {
 }
 
 extension UITableViewCell: ReuseIdentifying {}
+extension UICollectionViewCell: ReuseIdentifying {}

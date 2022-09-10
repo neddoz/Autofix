@@ -35,7 +35,6 @@ final class APIClient: APIServiceProtocol {
             }
             do {
                 let decoder = JSONDecoder()
-//                decoder.dateDecodingStrategy = .formatted(Formatter.iso8601)
                 return .success(try decoder.decode(T.self, from: $0.data))
             } catch {
                 return .failure(NetworkError.DecodingFailure(errorMessage: error.localizedDescription))
