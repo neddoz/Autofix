@@ -29,7 +29,7 @@ extension ListingDetailViewController {
         titleLabel.widthAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 0.5).isActive = true
         
         tableView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10).isActive = true
-        tableView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.3).isActive = true
+        tableView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.6).isActive = true
         tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
     }
