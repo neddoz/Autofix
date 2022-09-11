@@ -24,7 +24,6 @@ struct Listing: Codable {
     let depositReceived: Bool
     let loanValue: Int
     let websiteURL: String
-    let stats: Stats
     let bodyTypeID: String
     let sold, hasThreeDImage: Bool
     let transmission, fuelType, marketplaceVisibleDate: String
@@ -34,16 +33,9 @@ struct Listing: Codable {
         case imageURL = "imageUrl"
         case year, city, state, gradeScore, sellingCondition, hasWarranty, marketplacePrice, marketplaceOldPrice, hasFinancing, mileage, mileageUnit, installment, depositReceived, loanValue
         case websiteURL = "websiteUrl"
-        case stats
         case bodyTypeID = "bodyTypeId"
         case sold, hasThreeDImage, transmission, fuelType, marketplaceVisibleDate
     }
-}
-
-// MARK: - Stats
-struct Stats: Codable {
-    let webViewCount, webViewerCount, interestCount, testDriveCount: Int
-    let appViewCount, appViewerCount, processedLoanCount: Int
 }
 
 // MARK: - Pagination

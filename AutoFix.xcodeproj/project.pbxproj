@@ -13,7 +13,6 @@
 		C8F34D9628CB90D4009DAC1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8F34D9428CB90D4009DAC1E /* Main.storyboard */; };
 		C8F34D9828CB90D7009DAC1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8F34D9728CB90D7009DAC1E /* Assets.xcassets */; };
 		C8F34D9B28CB90D7009DAC1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8F34D9928CB90D7009DAC1E /* LaunchScreen.storyboard */; };
-		C8F34DA628CB90D8009DAC1E /* AutoFixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F34DA528CB90D8009DAC1E /* AutoFixTests.swift */; };
 		C8F34DB028CB90D8009DAC1E /* AutoFixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F34DAF28CB90D8009DAC1E /* AutoFixUITests.swift */; };
 		C8F34DB228CB90D8009DAC1E /* AutoFixUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F34DB128CB90D8009DAC1E /* AutoFixUITestsLaunchTests.swift */; };
 		C8F34DC028CB985A009DAC1E /* URLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F34DBF28CB9859009DAC1E /* URLResponse.swift */; };
@@ -39,6 +38,12 @@
 		C8F34DF128CDB1FB009DAC1E /* ListingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F34DF028CDB1FB009DAC1E /* ListingDetailViewController.swift */; };
 		C8F34DF428CDB4D1009DAC1E /* ListingDetailViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F34DF328CDB4D1009DAC1E /* ListingDetailViewController+Extension.swift */; };
 		C8F34DF628CDB529009DAC1E /* ListingDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F34DF528CDB529009DAC1E /* ListingDetailViewModel.swift */; };
+		C8F34DFA28CDEFB9009DAC1E /* MockClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F34DF828CDEF63009DAC1E /* MockClient.swift */; };
+		C8F34DFC28CDF423009DAC1E /* ListingCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F34DFB28CDF423009DAC1E /* ListingCellViewModelTests.swift */; };
+		C8F34DFE28CDF6A7009DAC1E /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F34DFD28CDF6A6009DAC1E /* HomeViewModelTests.swift */; };
+		C8F34E0028CDFFDF009DAC1E /* ListingDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F34DFF28CDFFDF009DAC1E /* ListingDetailViewModelTests.swift */; };
+		C8F34E0228CE0222009DAC1E /* ReuseIdentifyingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F34E0128CE0222009DAC1E /* ReuseIdentifyingTests.swift */; };
+		C8F34E0428CE02A2009DAC1E /* AppRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F34E0328CE02A2009DAC1E /* AppRouterTests.swift */; };
 		DF81115D92683E1EEA60AA65 /* Pods_AutoFixTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22865BFA24732F2F2CA1364B /* Pods_AutoFixTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,7 +78,6 @@
 		C8F34D9A28CB90D7009DAC1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8F34D9C28CB90D7009DAC1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8F34DA128CB90D8009DAC1E /* AutoFixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoFixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8F34DA528CB90D8009DAC1E /* AutoFixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoFixTests.swift; sourceTree = "<group>"; };
 		C8F34DAB28CB90D8009DAC1E /* AutoFixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoFixUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8F34DAF28CB90D8009DAC1E /* AutoFixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoFixUITests.swift; sourceTree = "<group>"; };
 		C8F34DB128CB90D8009DAC1E /* AutoFixUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoFixUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -100,6 +104,12 @@
 		C8F34DF028CDB1FB009DAC1E /* ListingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingDetailViewController.swift; sourceTree = "<group>"; };
 		C8F34DF328CDB4D1009DAC1E /* ListingDetailViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListingDetailViewController+Extension.swift"; sourceTree = "<group>"; };
 		C8F34DF528CDB529009DAC1E /* ListingDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingDetailViewModel.swift; sourceTree = "<group>"; };
+		C8F34DF828CDEF63009DAC1E /* MockClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockClient.swift; sourceTree = "<group>"; };
+		C8F34DFB28CDF423009DAC1E /* ListingCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingCellViewModelTests.swift; sourceTree = "<group>"; };
+		C8F34DFD28CDF6A6009DAC1E /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		C8F34DFF28CDFFDF009DAC1E /* ListingDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingDetailViewModelTests.swift; sourceTree = "<group>"; };
+		C8F34E0128CE0222009DAC1E /* ReuseIdentifyingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifyingTests.swift; sourceTree = "<group>"; };
+		C8F34E0328CE02A2009DAC1E /* AppRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouterTests.swift; sourceTree = "<group>"; };
 		F9A033F1D12D5BA57A84D191 /* Pods-AutoFixTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoFixTests.debug.xcconfig"; path = "Target Support Files/Pods-AutoFixTests/Pods-AutoFixTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -196,7 +206,12 @@
 		C8F34DA428CB90D8009DAC1E /* AutoFixTests */ = {
 			isa = PBXGroup;
 			children = (
-				C8F34DA528CB90D8009DAC1E /* AutoFixTests.swift */,
+				C8F34DF728CDEF3E009DAC1E /* Mocks */,
+				C8F34DFB28CDF423009DAC1E /* ListingCellViewModelTests.swift */,
+				C8F34DFD28CDF6A6009DAC1E /* HomeViewModelTests.swift */,
+				C8F34DFF28CDFFDF009DAC1E /* ListingDetailViewModelTests.swift */,
+				C8F34E0128CE0222009DAC1E /* ReuseIdentifyingTests.swift */,
+				C8F34E0328CE02A2009DAC1E /* AppRouterTests.swift */,
 			);
 			path = AutoFixTests;
 			sourceTree = "<group>";
@@ -311,6 +326,14 @@
 				C8F34DF328CDB4D1009DAC1E /* ListingDetailViewController+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C8F34DF728CDEF3E009DAC1E /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				C8F34DF828CDEF63009DAC1E /* MockClient.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -545,6 +568,7 @@
 				C8F34DD728CCC076009DAC1E /* UIImageView+Extesnsion.swift in Sources */,
 				C8F34D9128CB90D4009DAC1E /* SceneDelegate.swift in Sources */,
 				C8F34DC028CB985A009DAC1E /* URLResponse.swift in Sources */,
+				C8F34DFA28CDEFB9009DAC1E /* MockClient.swift in Sources */,
 				C8F34DDC28CCC920009DAC1E /* HomeViewController+Extension.swift in Sources */,
 				C8F34DE428CCCEE1009DAC1E /* ListingsRequest.swift in Sources */,
 				C8F34DD528CC8FAC009DAC1E /* NSMutableAttributedString+Extension.swift in Sources */,
@@ -561,7 +585,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8F34DA628CB90D8009DAC1E /* AutoFixTests.swift in Sources */,
+				C8F34E0428CE02A2009DAC1E /* AppRouterTests.swift in Sources */,
+				C8F34DFC28CDF423009DAC1E /* ListingCellViewModelTests.swift in Sources */,
+				C8F34DFE28CDF6A7009DAC1E /* HomeViewModelTests.swift in Sources */,
+				C8F34E0028CDFFDF009DAC1E /* ListingDetailViewModelTests.swift in Sources */,
+				C8F34E0228CE0222009DAC1E /* ReuseIdentifyingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

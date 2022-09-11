@@ -59,7 +59,6 @@ final class AppRouter {
     init() {
         homeNav.isNavigationBarHidden = false
         homeNav.navigationItem.largeTitleDisplayMode = .never
-
         homeNav.navigationBar.prefersLargeTitles = false
     }
 }

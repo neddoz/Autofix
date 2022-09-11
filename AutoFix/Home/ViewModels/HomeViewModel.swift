@@ -24,11 +24,11 @@ final class HomeViewModel {
 
     init(doIntialFetch: Bool = true) {
         if doIntialFetch {
-            fetchItems(with: "\"\"")
+            fetchItems(with: "\"\""){ _ in}
         }
     }
 
-    func fetchItems(with query: String, client: APIServiceProtocol = APIClient.shared ) {
+    func fetchItems(with query: String, client: APIServiceProtocol = APIClient.shared, completion: @escaping (Bool)-> Void) {
         let searchRequest: APIRequest = ListingsRequest()
         let observable: Observable<Result<ListingsResult, Error>> = client.send(apiRequest: searchRequest)
         
@@ -60,15 +60,13 @@ final class HomeViewModel {
             case (.failure(let error), .failure(_)):
                 self.error.accept(error)
             }
+            completion(true)
 
         } onError: { error in
             self.isLoading.accept(false)
             self.error.accept(error)
         } .disposed(by: disposeBag)
 
-    }
-    
-    func fetchMakes() {
     }
     
     func item(for row: Int)-> ListingCellViewModel {
