@@ -12,7 +12,7 @@ final class AppRouter {
     
     lazy var homeViewController: HomeViewController = {
         let vc = HomeViewController()
-        vc.tabBarItem.image = UIImage(systemName: "person")
+        vc.tabBarItem.image = UIImage(systemName: "house")
         vc.tabBarItem.title = ""
         return vc
     }()
@@ -33,17 +33,33 @@ final class AppRouter {
         return vc
     }()
     
-    fileprivate lazy var root: UINavigationController = {
+    fileprivate lazy var homeNav: UINavigationController = {
         return UINavigationController(rootViewController: homeViewController)
     }()
 
     func rootController() -> UIViewController {
-        let mainTabBar = MainTabBar(vcs: [homeViewController, favouritesViewController, accountViewController])
+        let vcs:[UINavigationController] = [homeViewController, favouritesViewController, accountViewController].map {
+            if $0 is HomeViewController {
+                return homeNav
+            } else {
+                return UINavigationController(rootViewController: $0)
+            }
+        }
+        let mainTabBar = MainTabBar(vcs: vcs)
         return mainTabBar
+    }
+    
+    func presentImageDetailViewController(for item: String) {
+        let viewModel = ListingDetailViewModel(carId: item)
+        let vc = ListingDetailViewController(viewModel: viewModel)
+        homeNav.navigationBar.prefersLargeTitles = false
+        homeViewController.navigationController?.pushViewController(vc, animated: false)
     }
 
     init() {
-        root.isNavigationBarHidden = false
-        root.navigationBar.prefersLargeTitles = true
+        homeNav.isNavigationBarHidden = false
+        homeNav.navigationItem.largeTitleDisplayMode = .never
+
+        homeNav.navigationBar.prefersLargeTitles = false
     }
 }

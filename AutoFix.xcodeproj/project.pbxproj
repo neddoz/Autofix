@@ -36,6 +36,9 @@
 		C8F34DEA28CCDC28009DAC1E /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F34DE928CCDC28009DAC1E /* MainTabBar.swift */; };
 		C8F34DEC28CD2935009DAC1E /* Make.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F34DEB28CD2935009DAC1E /* Make.swift */; };
 		C8F34DEE28CD2A4F009DAC1E /* MakeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F34DED28CD2A4F009DAC1E /* MakeCell.swift */; };
+		C8F34DF128CDB1FB009DAC1E /* ListingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F34DF028CDB1FB009DAC1E /* ListingDetailViewController.swift */; };
+		C8F34DF428CDB4D1009DAC1E /* ListingDetailViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F34DF328CDB4D1009DAC1E /* ListingDetailViewController+Extension.swift */; };
+		C8F34DF628CDB529009DAC1E /* ListingDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F34DF528CDB529009DAC1E /* ListingDetailViewModel.swift */; };
 		DF81115D92683E1EEA60AA65 /* Pods_AutoFixTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22865BFA24732F2F2CA1364B /* Pods_AutoFixTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +97,9 @@
 		C8F34DE928CCDC28009DAC1E /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		C8F34DEB28CD2935009DAC1E /* Make.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Make.swift; sourceTree = "<group>"; };
 		C8F34DED28CD2A4F009DAC1E /* MakeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCell.swift; sourceTree = "<group>"; };
+		C8F34DF028CDB1FB009DAC1E /* ListingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingDetailViewController.swift; sourceTree = "<group>"; };
+		C8F34DF328CDB4D1009DAC1E /* ListingDetailViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListingDetailViewController+Extension.swift"; sourceTree = "<group>"; };
+		C8F34DF528CDB529009DAC1E /* ListingDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingDetailViewModel.swift; sourceTree = "<group>"; };
 		F9A033F1D12D5BA57A84D191 /* Pods-AutoFixTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoFixTests.debug.xcconfig"; path = "Target Support Files/Pods-AutoFixTests/Pods-AutoFixTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -218,6 +224,7 @@
 		C8F34DC528CBA1D7009DAC1E /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C8F34DEF28CDB1D3009DAC1E /* ListingDetail */,
 				C8F34DDA28CCC8FB009DAC1E /* Extensions */,
 				C8F34DD128CC8B6B009DAC1E /* ViewModels */,
 				C8F34DC628CBA1F6009DAC1E /* ListingCell.swift */,
@@ -286,6 +293,24 @@
 				C8F34DE328CCCEE1009DAC1E /* ListingsRequest.swift */,
 			);
 			path = Listings;
+			sourceTree = "<group>";
+		};
+		C8F34DEF28CDB1D3009DAC1E /* ListingDetail */ = {
+			isa = PBXGroup;
+			children = (
+				C8F34DF228CDB4B3009DAC1E /* Extensions */,
+				C8F34DF028CDB1FB009DAC1E /* ListingDetailViewController.swift */,
+				C8F34DF528CDB529009DAC1E /* ListingDetailViewModel.swift */,
+			);
+			path = ListingDetail;
+			sourceTree = "<group>";
+		};
+		C8F34DF228CDB4B3009DAC1E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C8F34DF328CDB4D1009DAC1E /* ListingDetailViewController+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -507,12 +532,15 @@
 				C8F34DE628CCD159009DAC1E /* UIViewController+Extension.swift in Sources */,
 				C8F34DD028CC7664009DAC1E /* IconInfoButton.swift in Sources */,
 				C8F34DE828CCDAAF009DAC1E /* AppRouter.swift in Sources */,
+				C8F34DF628CDB529009DAC1E /* ListingDetailViewModel.swift in Sources */,
 				C8F34DC728CBA1F6009DAC1E /* ListingCell.swift in Sources */,
 				C8F34DCA28CC70FB009DAC1E /* Listing.swift in Sources */,
+				C8F34DF128CDB1FB009DAC1E /* ListingDetailViewController.swift in Sources */,
 				C8F34DE128CCCBF6009DAC1E /* HomeViewModel.swift in Sources */,
 				C8F34D8F28CB90D4009DAC1E /* AppDelegate.swift in Sources */,
 				C8F34DDF28CCCA7F009DAC1E /* ReuseIdentifying.swift in Sources */,
 				C8F34DEA28CCDC28009DAC1E /* MainTabBar.swift in Sources */,
+				C8F34DF428CDB4D1009DAC1E /* ListingDetailViewController+Extension.swift in Sources */,
 				C8F34DEC28CD2935009DAC1E /* Make.swift in Sources */,
 				C8F34DD728CCC076009DAC1E /* UIImageView+Extesnsion.swift in Sources */,
 				C8F34D9128CB90D4009DAC1E /* SceneDelegate.swift in Sources */,

@@ -56,3 +56,25 @@ struct ListingsResult: Codable {
     let result: [Listing]
     let pagination: Pagination
 }
+
+
+
+// MARK: - ListingDetail
+struct ListingDetail: Codable {
+    // to add more properties later
+    let id: String
+    let year: Int
+    let vin: String
+    let imageURL: String
+    let carName: String
+    let engineType: String
+    let fuelType: String
+    let marketplacePrice: Int
+
+    enum CodingKeys: String, CodingKey {
+        case id, year, vin
+        case imageURL = "imageUrl"
+        case marketplacePrice
+        case carName, fuelType, engineType
+    }
+}

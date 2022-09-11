@@ -56,7 +56,11 @@ class ListingCellViewModel {
     var iconURL: URL {
         return URL(string: item.imageURL) ?? URL(string: "")!
     }
-    
+
+    var listingID: String {
+        return item.id
+    }
+
     init(_ item: Listing) {
         self.item = item
     }

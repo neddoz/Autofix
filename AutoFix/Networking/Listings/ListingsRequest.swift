@@ -23,3 +23,13 @@ class MakesRequest: APIRequest {
         parameters["popular"] = "true"
     }
 }
+
+class ListingDetailRequest: APIRequest {
+    var method = RequestType.GET
+    var path = "inventory/car/"
+    var parameters = [String: String]()
+    
+    init(_ carId: String) {
+        path += carId
+    }
+}

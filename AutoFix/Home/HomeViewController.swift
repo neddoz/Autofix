@@ -39,6 +39,8 @@ class HomeViewController: UIViewController {
         return spinner
     }()
     
+    lazy var searchBar:UISearchBar = UISearchBar()
+    
     // viewModel
     
     var viewModel: HomeViewModel? {
@@ -51,6 +53,17 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         setUpUI()
         viewModel = HomeViewModel()
+        
+        // searchBar
+        searchBar.searchBarStyle = UISearchBar.Style.default
+        searchBar.placeholder = " Search for cars"
+        searchBar.sizeToFit()
+        searchBar.isTranslucent = false
+        searchBar.backgroundImage = UIImage()
+        navigationItem.titleView = searchBar
+        
+        tableView.keyboardDismissMode = .interactive
+        collectionView.keyboardDismissMode = .interactive
     }
     
     override func viewWillAppear(_ animated: Bool) {

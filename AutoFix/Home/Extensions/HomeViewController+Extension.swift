@@ -57,15 +57,11 @@ extension HomeViewController: UITableViewDelegate {
     }
     
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        guard let viewModel = viewModel else {return}
-//        let item = viewModel.item(for: indexPath.row)
-//        if let datum = item.data.first,
-//           let urString = item.links.first?.href.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-//           let url = URL(string: urString) {
-//            AppRouter.shared.presentImageDetailViewController(for: datum, imageURL: url)
-//        }
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let viewModel = viewModel else {return}
+        let item = viewModel.item(for: indexPath.row)
+        AppRouter.shared.presentImageDetailViewController(for: item.listingID)
+    }
 }
 
 
