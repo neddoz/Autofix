@@ -38,6 +38,7 @@ extension HomeViewController: UITableViewDataSource {
                                      for: indexPath) as? ListingCell, let viewModel = viewModel else {
             return UITableViewCell()
         }
+        cell.selectionStyle = .none
         cell.setUpWith(viewModel: viewModel.item(for: indexPath.row))
         return cell
     }
