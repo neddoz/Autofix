@@ -20,7 +20,7 @@ extension HomeViewController {
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.register(ListingCell.self, forCellReuseIdentifier: ListingCell.reuseIdentifier)
         
-        tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true

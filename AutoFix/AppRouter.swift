@@ -34,7 +34,10 @@ final class AppRouter {
     }()
     
     fileprivate lazy var homeNav: UINavigationController = {
-        return UINavigationController(rootViewController: homeViewController)
+        let nav = UINavigationController(rootViewController: homeViewController)
+        nav.navigationBar.prefersLargeTitles = false
+        nav.navigationItem.largeTitleDisplayMode = .never
+        return nav
     }()
 
     func rootController() -> UIViewController {
@@ -60,5 +63,6 @@ final class AppRouter {
         homeNav.isNavigationBarHidden = false
         homeNav.navigationItem.largeTitleDisplayMode = .never
         homeNav.navigationBar.prefersLargeTitles = false
+        
     }
 }
