@@ -7,28 +7,18 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
 class MakeCell: UICollectionViewCell {
     
     private let carImageView: UIImageView = {
         let imageview = UIImageView()
         imageview.translatesAutoresizingMaskIntoConstraints = false
-//        imageview.contentMode = .scaleAspectFit
-//        imageview.backgroundColor = .gray
-//
-//        imageview.layer.borderWidth = 1.0
-//        imageview.layer.masksToBounds = false
-//        imageview.layer.borderColor = UIColor.white.cgColor
-//        imageview.layer.cornerRadius = imageview.frame.size.width / 2
-//        imageview.clipsToBounds = true
-        
-        imageview.layer.cornerRadius = (imageview.frame.size.width) / 2
-        imageview.clipsToBounds = true
-        imageview.layer.borderWidth = 3.0
-        imageview.layer.borderColor = UIColor.white.cgColor
-
+        imageview.contentMode = .scaleAspectFit
         return imageview
     }()
+    
+    fileprivate let imageViewHeight: CGFloat = 60
     
     private let infoLabel: UILabel = {
         let label = UILabel()
@@ -49,8 +39,17 @@ class MakeCell: UICollectionViewCell {
     
     func bind(item: Make) {
         let URL: URL = URL(string: item.imageURL) ?? URL(string: "")!
-        carImageView.loadImage(URL)
+        carImageView.sd_setImage(with: URL, placeholderImage: UIImage(named: "placeholder"))
         infoLabel.text = item.name
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        carImageView.layer.cornerRadius = CGFloat(imageViewHeight / 2)
+        carImageView.layer.masksToBounds = true
+        carImageView.clipsToBounds = true
+        carImageView.layer.borderWidth = 3.0
+        carImageView.layer.borderColor = UIColor.white.cgColor
     }
     
     override func prepareForReuse() {
@@ -65,8 +64,8 @@ class MakeCell: UICollectionViewCell {
         
         
         carImageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        carImageView.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        carImageView.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        carImageView.heightAnchor.constraint(equalToConstant: imageViewHeight).isActive = true
+        carImageView.widthAnchor.constraint(equalToConstant: imageViewHeight).isActive = true
         carImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 5).isActive = true
         
         infoLabel.topAnchor.constraint(equalTo: carImageView.bottomAnchor, constant: 5).isActive = true
