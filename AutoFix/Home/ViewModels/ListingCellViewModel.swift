@@ -13,7 +13,8 @@ class ListingCellViewModel {
 
     let decimalFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 0
         formatter.usesGroupingSeparator = true
         return formatter
     }()
@@ -23,11 +24,17 @@ class ListingCellViewModel {
     }
     
     var price: String {
-        return decimalFormatter.string(from: NSNumber(value: item.marketplacePrice)) ?? ""
+        guard let price = decimalFormatter.string(from: NSNumber(value: item.marketplacePrice)) else {
+            return ""
+        }
+        return "Ksh " + price
     }
     
     var mileage: String {
-        return decimalFormatter.string(from: NSNumber(value: item.mileage)) ?? "" + "km"
+        guard let mileage = decimalFormatter.string(from: NSNumber(value: item.mileage)) else {
+            return ""
+        }
+        return  "\(mileage) km"
     }
     
     var yearOfManufucture: String {

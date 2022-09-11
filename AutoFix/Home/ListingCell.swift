@@ -51,7 +51,7 @@ class ListingCell: UITableViewCell {
 
     let reviewsLabel: UIButton = {
         let button = IconInfoButton(icon: .init(named: "star-star_fill1_symbol") ?? UIImage(), title: "")
-        button.tintColor = .orange
+        button.imageView?.tintColor = .orange
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -64,14 +64,14 @@ class ListingCell: UITableViewCell {
     }()
     
     let usageInfoLabel: UIButton = {
-        let button = IconInfoButton(icon: .init(named: "av_timer-av_timer_symbol") ?? UIImage(), title: "")
+        let button = IconInfoButton(icon: .init(named: "car_repair-car_repair_symbol") ?? UIImage(), title: "")
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = .systemFont(ofSize: 10)
         return button
     }()
      
     let LocationInfoLabel: UIButton = {
-        let button = IconInfoButton(icon: .init(named: "av_timer-av_timer_symbol") ?? UIImage(), title: "")
+        let button = IconInfoButton(icon: .init(named: "location_on-location_on_symbol") ?? UIImage(), title: "")
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = .systemFont(ofSize: 10)
         return button
@@ -98,6 +98,7 @@ class ListingCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         viewModel.accept(nil)
+        carImageView.image = nil
     }
     
     func setUpWith(viewModel: ListingCellViewModel) {
@@ -184,7 +185,7 @@ extension ListingCell {
         // Info stack view
         infoStackView.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 20).isActive = true
         infoStackView.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        infoStackView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20).isActive = true
-        infoStackView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -20).isActive = true
+        infoStackView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10).isActive = true
+        infoStackView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10).isActive = true
     }
 }
