@@ -60,6 +60,7 @@ class HomeViewController: UIViewController {
         searchBar.sizeToFit()
         searchBar.isTranslucent = false
         searchBar.backgroundImage = UIImage()
+        searchBar.delegate = self
         navigationItem.titleView = searchBar
         
         tableView.keyboardDismissMode = .interactive
@@ -107,5 +108,12 @@ class HomeViewController: UIViewController {
                     }
                 }
         }.disposed(by: disposeBag)
+    }
+}
+
+
+extension HomeViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
 }
