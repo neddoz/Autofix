@@ -36,7 +36,8 @@ final class APIClient: APIServiceProtocol {
             do {
                 let decoder = JSONDecoder()
                 return .success(try decoder.decode(T.self, from: $0.data))
-            } catch {
+            } catch let error {
+                print("This is the error", error)
                 return .failure(NetworkError.DecodingFailure(errorMessage: error.localizedDescription))
             }
         }.share(replay: 1, scope: SubjectLifetimeScope.forever)

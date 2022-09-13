@@ -8,6 +8,53 @@
 import Foundation
 import RxSwift
 
+
+var sampleListingJSON = """
+{
+    "id": "5",
+    "title": "someTitle",
+    "imageURL": "example.com",
+    "year": 2014,
+    "city": "Nairobi",
+    "state": "Nairobi",
+    "gradeScore": 4.0,
+    "sellingCondition": "foreighn",
+    "hasWarranty": false,
+    "marketplacePrice": 1459000,
+    "marketplaceOldPrice": 23455666,
+    "hasFinancing": false,
+    "mileage": 123456,
+    "mileageUnit": "km",
+    "installment": 1,
+    "depositReceived": false,
+    "loanValue": 456789,
+    "websiteURL": "example.com",
+    "bodyTypeID": "suv",
+    "sold": false,
+    "hasThreeDImage": false,
+    "transmission": "AWD",
+    "fuelType": "diesel",
+    "transmission": "AWD",
+    "marketplaceVisibleDate": "20149540"
+}
+"""
+
+var sampleListingJDetailSON = """
+{
+    "id": "5",
+    "year": 2014,
+    "vin": "jsngo",
+    "imageURL": "example.com",
+    "city": "Nairobi",
+    "state": "Nairobi",
+    "gradeScore": 4.0,
+    "carName": "BMW",
+    "engineType": "diesel",
+    "fuelType": "diesel",
+    "marketplacePrice": 2094929
+}
+"""
+
 enum mockScenario {
     case listings
     case listingDetail
@@ -19,11 +66,15 @@ class MockClient: APIServiceProtocol {
     var mockScenario: mockScenario = .listings
     
     func getsampleListing()-> Listing {
-        return .init(id: "5", title: "someTitle", imageURL: "example.com", year: 2014, city: "Nairobi", state: "Nairobi", gradeScore: 4.0, sellingCondition: "foreighn", hasWarranty: false, marketplacePrice: 1459000, marketplaceOldPrice: 23455666, hasFinancing: false, mileage: 123456, mileageUnit: "km", installment: 1, depositReceived: false, loanValue: 456789, websiteURL: "example.com",bodyTypeID: "suv", sold: false, hasThreeDImage: true, transmission: "AWD", fuelType: "diesel", marketplaceVisibleDate: "20149540")
+        let jsonData = sampleListingJSON.data(using: .utf8)!
+        let listing: Listing = try! JSONDecoder().decode(Listing.self, from: jsonData)
+        return listing
     }
     
     func getSampleListingDetail()-> ListingDetail {
-        return .init(id: "5", year: 2014, vin: "jsngo", imageURL: "example.com", carName: "BMW", engineType: "4 cylinder", fuelType: "diesel", marketplacePrice: 2094929)
+        let jsonData = sampleListingJDetailSON.data(using: .utf8)!
+        let detail: ListingDetail = try! JSONDecoder().decode(ListingDetail.self, from: jsonData)
+        return detail
     }
     
     func getSampleSearchResult()-> ListingsResult {
